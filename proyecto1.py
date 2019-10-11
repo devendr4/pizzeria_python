@@ -203,9 +203,24 @@ def orden(tamano_p,toppings_p,subtotal_p): #esta funcion muestra un resumen de l
                 print(*listaux2, sep = ", ")
             else:
                 break
-            print("\t\tTotal:",total,"Bs") #y el monto total a cancelar, obtenido como resultado de sumar los subtotales de cada orden
+            print("\n\t\tTotal:",total,"Bs") #y el monto total a cancelar, obtenido como resultado de sumar los subtotales de cada orden
             print("\t\tTotal a pagar(+IVA):",format(iva(total),"0.2f"),"Bs")
             print("\t\tGracias por su compra, regrese pronto")
+            close = " "
+            while close!="s" or close != "n":
+                close = input("\n\t\t¿Desea cerrar la tienda?[s/n]: ")
+                if close == "s":
+                    exit()
+                elif close == "n":
+                    n=1
+                    total=0
+                    resumen_ingredientes = []
+                    resumen_tamanos = []
+                    resumen_subtotal = []
+                    menu_inicio()
+                else:
+                    print("\t\tOPCION INVALIDA. Intente nuevamente")
+
             exit()
         else:
             print("\t\tOPCION INVALIDA. Intente nuevamente")
